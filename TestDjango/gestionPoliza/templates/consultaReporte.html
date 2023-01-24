@@ -1,0 +1,302 @@
+{% load static %}
+<!DOCTYPE html>
+
+<style>
+  table, th, td {
+    border:1px solid black;
+  }  
+</style>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Formulario Registro</title>
+</head>
+<body>
+  <section class="form-register">
+    
+    
+  
+<!-- 
+  <br></br>
+
+  <h4>1) Liste los top 3 usuarios que tengo polizas de vida, ordenando descendentemente por la cantidad de polizas.</h4>
+  <table style="width:100%">
+
+    
+    <tr>
+      <th>ID de usuario</th>
+      <th>Nombre del usuario</th>
+      <th>Cantidad de polizas</th>        
+      
+    </tr>
+    {%for usuario in Usuario %}
+      <tr> 
+      
+        <td>{{usuario.id_usuario}}</td>
+        <td>{{usuario.nombre_usuario}}</td>    
+        <td>{{usuario.suma1}}</td>          
+        
+       
+      </tr>
+    {% endfor %}      
+  </table>    
+  
+  <br></br>
+  <h4>2)Imprima los datos de los asegurados con mas de 2 polizas de vehiculo y una poliza por lo menos de salud.</h4>
+  <table style="width:100%">
+
+    
+    <tr>
+      <th>ID de cliente</th>
+      <th>Cedula</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Direccion</th>        
+    </tr>
+    {%for cliente in Cliente %}
+      <tr> 
+      
+        <td>{{cliente.id_cliente.id_persona}}</td>
+        <td>{{cliente.id_cliente.ci}}</td>
+        <td>{{cliente.nombre_cliente}}</td>
+        <td>{{cliente.apellido_cliente}}</td>
+        <td>{{cliente.direc_cliente}}</td>
+        
+      </tr>
+    {% endfor %}      
+  </table> 
+
+  <br></br>
+  <h4>3) Se requiere conocer los datos y las polizas de los asegurados que son titulares.</h4>
+  <table style="width:100%">
+
+    
+    <tr>
+      <th>ID de cliente</th>
+      <th>Nombre de cliente</th>
+      <th>Apellido de cliente</th>
+      <th>Tipo de Poliza</th>
+             
+    </tr>
+    {%for cliente2 in Cliente2 %}
+      <tr> 
+      
+        <td>{{cliente2.id_cliente.id_persona}}</td>
+        <td>{{cliente2.nombre_cliente}}</td>
+        <td>{{cliente2.apellido_cliente}}</td>
+        <td>{{cliente2.descrip_poliza}}</td>
+      
+        
+      </tr>
+    {% endfor %}      
+  </table> 
+
+  <br></br>
+  <h4>4)Cual es el usuario que tiene mas suscripciones de polizas? Imprimir la informacion del usuario, de donde es y la cantidad de polizas por tipo de poliza que posee.</h4>
+  <table style="width:100%">
+
+    
+    <tr>
+      <th>ID de usuario</th>
+      <th>Nombre del usuario</th>
+      <th>Ciudad</th>
+      <th>Nro polizas de vida</th>   
+      <th>Nro polizas de hogar</th>        
+      <th>Nro polizas de vehiculo</th>             
+      
+    </tr>
+    {%for usuario2 in Usuario2 %}
+      <tr> 
+      
+        <td>{{usuario2.id_usuario}}</td>
+        <td>{{usuario2.nombre_usuario}}</td>
+        <td>{{usuario2.ciudad}}</td>       
+        <td>{{usuario2.vida3}}</td>
+        <td>{{usuario2.hogar3}}</td> 
+        <td>{{usuario2.vehiculo3}}</td>                 
+        
+       
+      </tr>
+    {% endfor %}      
+  </table> 
+  <br></br>
+-->
+
+<table style="width:100%">
+
+  <h4>5) Liste los top 3 usuarios que tengo polizas de vida, ordenando descendentemente por la cantidad de polizas.</h4>  
+<tr>
+  <th>Nombre del cliente</th>
+  <th>Número de poliza</th>
+  <th>Prima</th>        
+  
+</tr>
+{%for poliza in Poliza %}
+  <tr> 
+  
+    <td>{{poliza.cnombre_cliente}}</td>
+    <td>{{poliza.nro_poliza}}</td>    
+    <td>{{poliza.prima}}</td>          
+    
+   
+  </tr>
+{% endfor %}      
+</table>    
+<br></br>
+<table style="width:100%">
+
+  <h4>6)Ranking de clientes</h4>  
+<tr>
+  
+  <th>ID del cliente</th>
+  <th>Nombre del cliente</th>
+  <th>Número de polizas</th>   
+  
+  
+</tr>
+{%for cliente3 in Cliente3 %}
+  <tr> 
+     
+    <td>{{cliente3.id_cliente.id_persona}}</td>
+    <td>{{cliente3.nombre_cliente}}</td>    
+    <td>{{cliente3.suma1}}</td>     
+            
+    
+   
+  </tr>
+{% endfor %}      
+</table>   
+
+<br></br>
+
+<table style="width:100%">
+
+  <h4>7)Ranking de siniestros</h4>  
+<tr>
+  
+  <th>ID del siniestro</th>
+  <th>Siniestro</th>
+  <th>Número de siniestros</th>
+    
+  
+  
+</tr>
+{%for siniestro in Siniestro %}
+  <tr> 
+     
+    <td>{{siniestro.nro_siniestro}}</td>
+    <td>{{siniestro.descrip_siniestro}}</td>
+    <td>{{siniestro.suma10}}</td>   
+            
+    
+   
+  </tr>
+{% endfor %}      
+</table>   
+
+<br></br>
+
+</table>   
+
+<br></br>
+
+<table style="width:100%">
+
+  <h4>8)Imprima las sucursales donde vivan usuarios que tengas más de 5 pólizas de cualquier tipo.</h4>  
+<tr>
+  
+  <th>ID del sucursal</th>
+  <th>Nombre de la sucursal</th>
+  <th>Ciudad</th>
+  <th>Director</th>
+    
+  
+  
+</tr>
+{%for sucursal in Sucursal %}
+  <tr> 
+     
+    <td>{{sucursal.id_sucursal}}</td>
+    <td>{{sucursal.nb_sucursal}}</td>
+    <td>{{sucursal.id_ciudad.nb_ciudad}}</td>
+    <td>{{sucursal.id_director.id_empleado.nb_persona}}</td>
+       
+            
+    
+   
+  </tr>
+{% endfor %}      
+</table> 
+
+<br></br>
+
+<table style="width:100%">
+
+  <h4>9)Conocer el número total de personas cuyo vehículo estuvo implicado en algún accidente durante algún mes / año específico</h4>  
+<tr>
+  
+  
+  <th>fecha del accidente</th>
+  <th>Numero de accidentes</th>
+ 
+    
+  
+  
+</tr>
+{%for accidente in Accidente %}
+  <tr> 
+     
+    <td>{{accidente.fecha_acc}}</td>
+    <td>{{accidente.suma12}}</td>
+    
+       
+            
+    
+   
+  </tr>
+{% endfor %}      
+</table> 
+
+<br></br>
+
+<table style="width:100%">
+
+  <h4>10) ranking de sucursales con mas polizas</h4>  
+<tr>
+  
+  
+  
+  <th>ID de sucursal</th>
+  <th>Nombre de la sucursal</th>
+  <th>Número de polizas</th>
+ 
+    
+  
+  
+</tr>
+{%for sucursal2 in Sucursal2 %}
+  <tr> 
+     
+    <td>{{sucursal2.id_sucursal}}</td>
+    <td>{{sucursal2.nb_sucursal}}</td>
+    <td>{{sucursal2.suma2}}</td>
+    
+       
+            
+    
+   
+  </tr>
+{% endfor %}      
+</table> 
+
+<br></br>
+   
+    <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+  </section>
+
+</body>
+</html>

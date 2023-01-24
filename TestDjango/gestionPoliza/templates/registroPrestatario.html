@@ -1,0 +1,58 @@
+<h3>Formulario para registrar un prestatario </h3>
+<hr>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{PrestatarioForm}}
+    <input type="submit">
+
+    {%for cliente in Cliente %}
+        <li>
+
+            {{cliente.id_cliente.id_persona}}
+            {{cliente.id_cliente.ci}} 
+            {{cliente.nombre_cliente}}             
+            {{cliente.apellido_cliente}} 
+            {{cliente.direc_cliente}}
+            
+
+        </li>
+    {% endfor %}
+
+    <li>
+        
+    </li>
+
+    {%for financiadora in Financiadora %}
+        <li>
+
+            {{financiadora.id_financiadora}}
+            {{financiadora.direc_financiadora}}
+            {{financiadora.tlf_financiadora}}        
+            
+            
+
+        </li>
+    {% endfor %}
+    
+    <li>
+        
+    </li>
+
+    {%for prestamo in Prestamo %}
+    <li>
+
+        {{prestamo.id_prestamo}}
+        {{prestamo.prima}}
+        
+        
+
+    </li>
+    {% endfor %}  
+
+
+
+    
+
+
+</form>    

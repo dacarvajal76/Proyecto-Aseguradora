@@ -1,0 +1,30 @@
+<h3>Formulario para registrar un pago </h3>
+<hr>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{PagoForm}}
+    <input type="submit">
+
+    {%for prestamo in Prestamo %}
+    <li>
+
+        {{prestamo.id_prestamo}}
+        {{prestamo.prima}}
+        
+        
+
+    </li>
+    {% endfor %}  
+
+
+     
+
+    <li>
+        
+    </li>
+
+    
+
+
+</form>    

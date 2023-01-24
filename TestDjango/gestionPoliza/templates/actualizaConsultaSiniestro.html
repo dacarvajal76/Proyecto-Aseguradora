@@ -1,0 +1,91 @@
+
+{% load static %}
+<!DOCTYPE html>
+
+<style>
+  table, th, td {
+    border:1px solid black;
+  }  
+</style>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Actualizar Siniestro</title>
+</head>
+<body>
+  <section class="form-register">
+    <form action ="" method="post">
+      {% csrf_token %}  
+    <h4>Siniestros</h4d>
+   
+    <h4>Introduzca el ID del siniestro a actualizar </h4>
+
+
+    
+    <input class="controls" type="number" name="id_siniestro" id="id_siniestro" placeholder="ID de siniestro..." required="">
+    
+    
+    
+    <input type="submit" class="botons" value="Actualizar"/>
+    
+
+    </form>  
+    
+    <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+
+    <br></br>
+
+    <table style="width:100%">
+
+    
+      <tr>        
+        <th>ID de siniestro</th>
+        <th>Nombre del titular</th>
+        <th>Cedula del titular</th>
+        <th>Tipo de siniestro</th>
+        <th>Numero de poliza</th>
+        <th>Fecha del siniestro</th>
+        <th>Fecha de respuesta</th>
+        <th>Aprobacion</th>
+        <th>Monto solicitado</th>
+        <th>Monto reconocido</th>
+        
+        
+        
+      </tr>
+      {%for rsiniestro in RSiniestro %}
+        <tr> 
+          
+
+
+          <td>{{rsiniestro.auxpk9}}</td>
+
+          {% for titular in Titular %}
+            {% if titular.nro_poliza == rsiniestro.nro_poliza %}
+            <td>{{titular.id_cliente.nombre_cliente}}</td>
+            <td>{{titular.id_cliente.id_cliente.ci}}</td>
+            {% endif %}
+          {% endfor %}
+
+          <td>{{rsiniestro.nro_siniestro.descrip_siniestro}}</td>
+          <td>{{rsiniestro.nro_poliza.nro_poliza}}</td>
+          <td>{{rsiniestro.fecha_siniestro}}</td>
+          <td>{{rsiniestro.fecha_respuesta}}</td>
+          <td>{{rsiniestro.id_rechazo}}</td>
+          <td>{{rsiniestro.monto_solicitado}}</td>
+          <td>{{rsiniestro.monto_reconocido}}</td>
+                 
+         
+        </tr>
+      {% endfor %}      
+    </table>    
+    
+
+  </section>
+
+</body>
+</html>

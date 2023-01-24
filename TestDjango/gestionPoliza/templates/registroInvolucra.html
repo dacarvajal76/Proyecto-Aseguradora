@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+
+<style>
+    table, th, td {
+      border:1px solid black;
+    }  
+  </style>
+  
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Formulario Registro</title>
+</head>
+<body>
+  <section class="form-register">
+    <form action ="" method="post">
+      {% csrf_token %}  
+    <h4>Registro Involucra</h4>
+   
+    <h4>Datos del afectados en el accidente</h4>
+
+    <h4>ID del accidente</h4>
+    <input class="controls" type="number" name="nro_referencia_acc" id="nro_referencia_acc" placeholder="ID del accidente..." required="">
+
+    <h4>ID de la persona</h4>
+    <input class="controls" type="number" name="id_persona" id="id_persona" placeholder="ID del accidente..." required="">
+    
+    <h4>Matricula</h4>
+    <input class="controls" type="text" name="matricula" id="matricula" placeholder="Matricula del vehiculo (Sí aplica)">
+
+    <input type="submit" class="botons" value="Consultar"/>  
+
+    
+
+   
+  </form>  
+  <a class="botons" href="/../" type="submit" role="button" >Volver </a>  
+
+  <br></br>
+
+  <table style="width:100%">
+
+    <h4>Accidentes</h4>
+      <tr>        
+        <th>ID de accidente</th>
+        <th>Fecha del accidente</th>
+        <th>Lugar del accidente</th>
+        <th>Hora del accidente</th>
+        <th>Categoria del accidente</th> 
+        <th>Descripcion del accidente</th>        
+        
+        
+      </tr>
+      {%for accidente in Accidente %}
+        <tr> 
+          
+
+
+            <td>{{accidente.nro_referencia_acc}}</td>
+            <td>{{accidente.fecha_acc}}</td>
+            <td>{{accidente.lugar_acc}}</td>
+            <td>{{accidente.hora_acc}}</td>
+            <td>{{accidente.id_categoria.descrip_categ}}</td>
+            <td>{{accidente.id_categoria.descrip_sub_categ}}</td>
+           
+         
+        </tr>
+      {% endfor %}      
+    </table>
+    <br></br>
+
+
+    <table style="width:100%">
+
+        <h4>Personas</h4>
+        <tr>
+          <th>ID de persona</th>
+          <th>Cedula</th>
+          <th>Nombre</th>
+          <th>Telefono</th>
+          <th>Tipo Persona</th>
+        </tr>
+        {%for persona in Persona %}
+          <tr> 
+          
+            <td>{{persona.id_persona}}</td>
+            <td>{{persona.ci}}</td>
+            <td>{{persona.nb_persona}}</td>
+            <td>{{persona.num_tlf_persona}}</td>
+            <td>{{persona.tipo_persona.descripcion}}</td>
+           
+          </tr>
+        {% endfor %}      
+      </table>    
+      
+  
+  
+      <br></br>
+
+      <table style="width:100%">
+
+        <h4>Vehiculos</h4>
+        <tr>
+          <th>Matricula</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Año</th>
+          
+        </tr>
+        {%for vehiculo in Vehiculo %}
+          <tr> 
+          
+            <td>{{vehiculo.matricula}}  </td>
+            <td>{{vehiculo.marca}}</td>
+            <td>{{vehiculo.modelo}}</td>
+            <td>{{vehiculo.annio}}</td>          
+           
+          </tr>
+        {% endfor %}      
+      </table> 
+      
+      <br></br>
+
+  </section>
+
+</body>
+</html>
+
+
+
+
+

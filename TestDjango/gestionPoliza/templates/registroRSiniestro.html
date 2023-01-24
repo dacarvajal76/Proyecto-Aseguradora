@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+
+<style>
+  table, th, td {
+    border:1px solid black;
+  }  
+</style>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Formulario Registro</title>
+</head>
+<body>
+  <section class="form-register">
+
+    <form action ="" method="post">
+      {% csrf_token %}  
+    <h4>Registro de siniestro</h4>
+   
+    <h4>Datos del siniestro</h4>   
+    
+
+    <h4>Numero de poliza</h4>
+    <input class="controls" type="number" name="nro_poliza" id="nro_poliza" placeholder="Numero de poliza" required="">    
+
+    <h4>Tipo de siniestro</h4>
+    <select name="nro_siniestro" id="nro_siniestro">
+        <option value =1>Vida o personal</option>
+        <option value =2>Total</option>
+        <option value =3>Parcial</option>
+        <option value =4>Ordinario</option>
+        <option value =5>Extraordinario</option>
+            
+    </select> 
+
+    <h4>Tipo de poliza</h4>
+    <select name="nro_poliza" id="nro_poliza">
+        <option value =1>Vida</option>
+        <option value =2>Inmueble</option>
+        <option value =3>Vehiculo</option>
+        
+            
+    </select> 
+
+    <h4>Fecha del siniestro </h4>
+    <input class="controls" type="date" name="fecha_siniestro" id="fecha_siniestro" placeholder="Fecha del siniestro" required="">
+    <h4>Fecha de respuesta </h4>
+    <input class="controls" type="date" name="fecha_respuesta" id="fecha_respuesta" placeholder="Fecha de la respuesta" >
+    <h4>Aprobacion </h4>
+    <select name="id_rechazo" id="id_rechazo">
+      <option value ='SI'>SI</option>
+      <option value ='NO'>NO</option>      
+    </select> 
+    <br></br> 
+    <h4>Monto reconocido </h4>
+    <input class="controls" type="number" name="monto_reconocido" id="monto_reconocido" placeholder="Monto reconocido" >
+    <h4>Monto solicitado </h4>
+    <input class="controls" type="number" name="monto_solicitado" id="monto_solicitado" placeholder="Monto solicitado" required="">
+
+
+    
+    <input type="submit" class="botons" value="Registrar"/>
+   
+    </form>    
+    
+    <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+
+    <br></br>
+
+    <table style="width:100%">
+
+    
+      <tr>
+        <th>Numero de poliza</th>
+        <th>Nombre del titular</th>
+        <th>Cedula de titular</th>
+        <th>Tipo de poliza</th>
+        <th>Prima</th>
+        
+      </tr>
+      {%for titular in Titular %}
+        <tr> 
+        
+          <td>{{titular.nro_poliza.nro_poliza}}</td>
+          <td>{{titular.id_cliente.nombre_cliente}}</td>
+          <td>{{titular.id_cliente.id_cliente.ci}}</td>
+          <td>{{titular.nro_poliza.id_tipo_poliza.desc_poliza}}</td> 
+          <td>{{titular.nro_poliza.prima}}</td>        
+         
+
+         
+        </tr>
+      {% endfor %}      
+    </table>    
+    
+
+
+    <br></br>
+    
+  </section>
+
+</body>
+</html>

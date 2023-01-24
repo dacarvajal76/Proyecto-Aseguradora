@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styleslider.css' %} ">
+	<meta charset="UTF-8">
+	<title>Emisiones</title>
+	<link rel="stylesheet" href="{% static 'css/estilos.css' %} ">
+</head>
+<body>
+	<section class="title">
+		<h1>Aseguradora Continental UCAB</h1>
+	</section>
+
+	<nav class="navegacion">
+		<ul class="menu">
+
+			{% if request.user.is_staff %}
+
+			<li class="first-item">
+				<a href="registroRSiniestro/">
+					<img src="{% static 'img/blog.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Reporte de Siniestro</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="actualizaConsultaSiniestro/">
+					<img src="{% static 'img/Actualizar.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Actualizar Siniestro</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="registroAccidente/">
+					<img src="{% static 'img/servicios.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Registrar Accidente</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="registroMulta/">
+					<img src="{% static 'img/Vehiculo.jpg' %} " alt="" class="imagen">  <!--Editar tamanio de imagen-->
+					<span class="text-item">Registrar Multa</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="registroInvolucra/">
+					<img src="{% static 'img/Vehiculo.jpg' %} " alt="" class="imagen">  <!--Editar tamanio de imagen-->
+					<span class="text-item">Registrar Involucra</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="mostrarAccidente/">
+					<img src="{% static 'img/Vehiculo.jpg' %} " alt="" class="imagen">  <!--Editar tamanio de imagen-->
+					<span class="text-item">Ver Accidentes</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+
+			{% endif %}
+            <li>
+				<a href="consultaSiniestro/">
+					<img src="{% static 'img/Lupa.jpg' %} " alt="" class="imagen">  <!--Editar tamanio de imagen-->
+					<span class="text-item">Consultar Siniestro</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+
+		  	<li>
+				<a href="/../">
+					<img src="{% static 'img/volver.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Volver</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+
+		</ul>
+
+	</nav>
+	<section class="slider-section">
+		
+			<ul>
+				<div class="imagebox">
+					<li>
+					
+						<img src="{% static 'img/Choquecomico.jpg' %} " alt="">
+						<span class="imagebox-desc">Consultas y actualizacion de siniestros</span>
+					</li>
+				</div>
+				
+			</ul>
+		
+
+	</section>
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+{% load static %}
+<!DOCTYPE html>
+
+<style>
+  table, th, td {
+    border:1px solid black;
+  }  
+</style>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Actualizar Siniestro</title>
+</head>
+<body>
+  <section class="form-register">
+    <form action ="" method="post">
+      {% csrf_token %}  
+    <h4>Siniestros</h4d>
+   
+    <h4>Introduzca los datos a actualizar </h4>
+
+
+    
+    <h4>Fecha de respuesta </h4>
+    <input class="controls" type="date" name="fecha_respuesta" id="fecha_respuesta" placeholder="Fecha de la respuesta" >
+    <h4>Aprobacion </h4>
+    <select name="id_rechazo" id="id_rechazo">
+      <option value ='SI'>SI</option>
+      <option value ='NO'>NO</option>      
+    </select> 
+    <br></br> 
+    <h4>Monto reconocido </h4>
+    <input class="controls" type="number" name="monto_reconocido" id="monto_reconocido" placeholder="Monto reconocido" >
+    
+    
+    
+    <input type="submit" class="botons" value="Actualizar"/>
+    
+
+    </form>  
+    
+    <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+
+    <br></br>
+    <h4>Siniestros </h4>
+    <br></br>
+    <table style="width:100%">
+
+    
+      <tr>        
+        <th>ID de siniestro</th>
+        <th>Nombre del titular</th>
+        <th>Cedula del titular</th>
+        <th>Tipo de siniestro</th>
+        <th>Numero de poliza</th>
+        <th>Fecha del siniestro</th>
+        <th>Fecha de respuesta</th>
+        <th>Aprobacion</th>
+        <th>Monto solicitado</th>
+        <th>Monto reconocido</th>
+        
+        
+        
+      </tr>
+      
+        <tr>
+            
+          <td>{{RSiniestro.auxpk9}}</td>
+
+          {% for titular in Titular %}
+            {% if titular.nro_poliza == RSiniestro.nro_poliza %}
+            <td>{{titular.id_cliente.nombre_cliente}}</td>
+            <td>{{titular.id_cliente.id_cliente.ci}}</td>
+            {% endif %}
+          {% endfor %}
+
+          <td>{{RSiniestro.nro_siniestro.descrip_siniestro}}</td>
+          <td>{{RSiniestro.nro_poliza.nro_poliza}}</td>
+          <td>{{RSiniestro.fecha_siniestro}}</td>
+          <td>{{RSiniestro.fecha_respuesta}}</td>
+          <td>{{RSiniestro.id_rechazo}}</td>
+          <td>{{RSiniestro.monto_solicitado}}</td>
+          <td>{{RSiniestro.monto_reconocido}}</td>
+                 
+         
+        </tr>
+          
+    </table>    
+    
+
+  </section>
+
+</body>
+</html>

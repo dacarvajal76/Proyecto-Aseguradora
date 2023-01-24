@@ -1,0 +1,41 @@
+body{
+	color:#fff;
+}
+.menu-1{
+	height: 60px;
+	background: rgb(0, 0, 0);
+}
+.slider-1, .slider-2, .slider-3, .slider-4,.slider-5{
+	height: 100vh;
+	text-align: center;
+}
+.slider-1{
+	background: #0a3ad8da;
+}
+.slider-2{
+	background: #000000;
+}
+.slider-3{
+	background: #0a3ad8da;
+}
+.slider-4{
+	background: #000000;
+}
+
+.slider-5{
+
+	background: #0a3ad8da;
+}
+.footer{
+	background: #444;
+	color:#fff;
+	text-align: center;
+	padding: 10px;
+}
+
+.ul{
+	position: relative;
+	left: 1000px;
+	
+
+}

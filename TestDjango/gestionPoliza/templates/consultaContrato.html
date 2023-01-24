@@ -1,0 +1,36 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Formulario Registro</title>
+</head>
+<body>
+  <section class="form-register">
+    <form action ="" method="post">
+      {% csrf_token %}  
+    <h4>Consulte su contrato</h4d>
+   
+    <h4>Introduzca su cedula</h4>
+
+
+    
+    <input class="controls" type="number" name="cedula" id="cedula" placeholder="Cedula..." required="">
+    
+    
+    
+    <input type="submit" class="botons" value="Consultar"/>
+    
+
+    </form>  
+    
+    <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+
+  </section>
+
+</body>
+</html>

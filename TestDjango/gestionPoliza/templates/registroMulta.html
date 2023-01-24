@@ -1,0 +1,90 @@
+
+{% load static %}
+<!DOCTYPE html>
+
+<style>
+  table, th, td {
+    border:1px solid black;
+  }  
+</style>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Registrar Accidente</title>
+</head>
+<body>
+  <section class="form-register">
+    <form action ="" method="post">
+      {% csrf_token %}  
+      <h4>Multa</h4>
+
+        <h4>Introduzca los datos para registrar una multa </h4>
+    
+    
+        <h4>Fecha de la multa </h4>
+        <input class="controls" type="date" name="fecha_multa" id="fecha_multa" placeholder="Fecha de la multa" required="">
+        <h4>Lugar de la multa </h4>
+        <input class="controls" type="text" name="lugar_multa" id="lugar_multa" placeholder="Lugar de la multa" required="">
+        <h4>Hora de la multa </h4>
+        <input class="controls" type="text" name="hora_multa" id="hora_multa" placeholder="Hora de la multa" required="">
+        <h4>Importe de la multa </h4>
+        <input class="controls" type="number" name="importe" id="importe" placeholder="Importe de la multa" required="">
+        <h4>Matricula </h4>
+        <input class="controls" type="text" name="matricula" id="matricula" placeholder="Matricula del vehiculo" required="">
+        <h4>Puntaje de gravedad (0 menor, 10 mayor)</h4>
+        <select name="puntaje_nivel_gravedad_acc" id="puntaje_nivel_gravedad_acc">
+          <option value =1>1</option>
+          <option value =2>2</option> 
+          <option value =3>3</option>
+          <option value =4>4</option> 
+          <option value =5>5</option>
+          <option value =6>6</option> 
+          <option value =7>7</option>
+          <option value =8>8</option> 
+          <option value =9>9</option>
+          <option value =10>10</option>
+        </select> 
+    
+        <br></br>
+    
+        <input type="submit" class="botons" value="Registrar"/>
+    
+
+    </form>  
+    
+    <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+
+    <br></br> 
+
+    <table style="width:100%">
+
+
+      <tr>
+        <th>Matricula</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Año</th>
+
+      </tr>
+      {%for vehiculo in Vehiculo %}
+        <tr> 
+
+          <td>{{vehiculo.matricula}}  </td>
+          <td>{{vehiculo.marca}}</td>
+          <td>{{vehiculo.modelo}}</td>
+          <td>{{vehiculo.annio}}</td>
+
+        </tr>
+      {% endfor %}
+    </table>
+ 
+    
+
+  </section>
+
+</body>
+</html>

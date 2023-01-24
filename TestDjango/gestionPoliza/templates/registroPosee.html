@@ -1,0 +1,44 @@
+<h3>Formulario para registrar un vehiculo </h3>
+<hr>
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    {{PoseeForm}}
+    <input type="submit">
+
+
+   
+
+
+    {%for persona in Persona %}
+        <li>
+
+            {{persona.id_persona}}
+            {{persona.ci}}
+            {{persona.nb_persona}}
+            {{persona.num_tlf_persona}}
+            {{persona.tipo_persona.descripcion}}
+
+        </li>
+    {% endfor %} 
+
+    <li>
+        
+    </li>
+
+    {%for vehiculo in Vehiculo %}
+        <li>
+
+            {{vehiculo.matricula}}            
+            {{vehiculo.marca}}
+            {{vehiculo.modelo}}
+            {{vehiculo.annio}}
+            
+            
+
+        </li>
+    {% endfor %} 
+
+
+</form>    

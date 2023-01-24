@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+
+<style>
+  table, th, td {
+    border:1px solid black;
+  }  
+</style>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Mostrar siniestro</title>
+</head>
+<body>
+  <section class="form-register">
+    
+  
+    <h4>Siniestros relacionados a su poliza</h4>
+
+  
+
+<table style="width:100%">
+
+    
+      <tr>        
+        <th>ID de accidente</th>
+        <th>Nombre de la persona</th>
+        <th>Cedula de la persona</th>
+        <th>Matricula</th>
+        <th>Fecha del accidente</th>
+        <th>Lugar del accidente</th>
+        <th>Hora del accidente</th>
+        <th>Categoria del accidente</th> 
+        <th>Descripcion del accidente</th>        
+        
+        
+      </tr>
+      {%for involucra in Involucra %}
+        <tr> 
+          
+
+
+            <td>{{involucra.nro_referencia_acc.nro_referencia_acc}}</td>
+            <td>{{involucra.id_persona.nb_persona}}</td>
+            <td>{{involucra.id_persona.ci}}</td>
+            <td>{{involucra.matricula.matricula}}</td>
+            <td>{{involucra.nro_referencia_acc.fecha_acc}}</td>
+            <td>{{involucra.nro_referencia_acc.lugar_acc}}</td>
+            <td>{{involucra.nro_referencia_acc.hora_acc}}</td>
+            <td>{{involucra.nro_referencia_acc.id_categoria.descrip_categ}}</td>
+            <td>{{involucra.nro_referencia_acc.id_categoria.descrip_sub_categ}}</td>
+           
+         
+        </tr>
+      {% endfor %}      
+    </table>
+    <br></br>
+
+    
+
+   
+    <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+  </section>
+
+</body>
+</html>

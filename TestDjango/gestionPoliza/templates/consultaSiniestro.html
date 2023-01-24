@@ -1,0 +1,36 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Siniestros relacionados a su póliza</title>
+</head>
+<body>
+  <section class="form-register">
+    <form action ="" method="post">
+      {% csrf_token %}  
+    
+   
+      <h4>Introduzca su numero de poliza</h4>
+
+
+    
+      <input class="controls" type="number" name="nro_poliza" id="nro_poliza" placeholder="Numero de poliza..." required="">
+    
+    
+    
+    <input type="submit" class="botons" value="Consultar"/>
+    
+
+    </form>  
+    
+    <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+
+  </section>
+
+</body>
+</html>

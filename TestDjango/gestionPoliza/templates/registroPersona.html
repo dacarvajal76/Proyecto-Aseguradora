@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Formulario Registro</title>
+</head>
+<body>
+  <section class="form-register">
+    <form action ="" method="post">
+      {% csrf_token %}  
+      <h4>Registro Persona</h4>
+   
+      <h4>Datos del persona a registrar</h4>
+  
+      <h4>Cedula de identidad</h4>
+      <input class="controls" type="number" name="ci" id="ci" placeholder="Ingrese la cedula del usuario" required="">
+      <h4>Nombre</h4>
+      <input class="controls" type="text" name="nb_persona" id="nb_persona" placeholder="Ingrese nombre de la persona" required="">
+      <h4>Numero de telefono</h4>
+      <input class="controls" type="number" name="num_tlf_persona" id="num_tlf_persona" placeholder="Ingrese el numero de telefono" required="">
+      <h4>Tipo de persona </h4>
+
+      <select name="tipo_persona" id="tipo_persona">
+        <option value =1>Beneficiario</option>
+        
+        <option value =4>Cliente</option>
+      <!--<option value =2>Empleado</option> <option value =3>Agente</option>-->
+
+      <!--<input class="controls" type="number" name="tipo_persona" id="tipo_persona" placeholder="Ingrese el tipo de persona" required="">-->
+      
+       
+      <input type="submit" class="botons" value="Registrar"/>
+
+    </form> 
+  
+  <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+        
+  </section>
+
+</body>
+</html>

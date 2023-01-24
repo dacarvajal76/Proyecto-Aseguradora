@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Formulario Registro</title>
+</head>
+<body>
+  <section class="form-register">
+    <form action ="" method="post">
+      {% csrf_token %}  
+    <h4>Emision poliza</h4>
+   
+    <h4>Datos de la poliza a Emitir</h4>
+
+
+    <h4>Descripcion de la poliza</h4>
+    <textarea class="controls" name="descrip_poliza" id="descrip_poliza" cols="30" rows="10" placeholder="Descripcion de la poliza emitida"></textarea>
+    <h4>Prima </h4>
+    <input class="controls" type="number" name="prima" id="prima" placeholder="Prima de la poliza ">
+    <input type="submit" class="botons" value="Registrar"/>
+    
+
+      </form>  
+    <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+    
+  </section>
+
+</body>
+</html>

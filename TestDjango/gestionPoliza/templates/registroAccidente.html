@@ -1,0 +1,81 @@
+
+{% load static %}
+<!DOCTYPE html>
+
+<style>
+  table, th, td {
+    border:1px solid black;
+  }  
+</style>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Registrar Accidente</title>
+</head>
+<body>
+  <section class="form-register">
+    <form action ="" method="post">
+      {% csrf_token %}  
+    <h4>Accidente</h4d>
+   
+    <h4>Introduzca los datos para registrar el accidente </h4>
+
+
+    <h4>Fecha del accidente </h4>
+    <input class="controls" type="date" name="fecha_acc" id="fecha_acc" placeholder="Fecha del accidente" required="">
+    <h4>Lugar del accidente </h4>
+    <input class="controls" type="text" name="lugar_acc" id="lugar_acc" placeholder="Lugar del accidente" required="">
+    <h4>Hora del accidente (Formato de 24 horas, Ej: 1300)</h4>
+    <input class="controls" type="text" name="hora_acc" id="hora_acc" placeholder="Hora del accidente" required="">       
+    <h4>Categoria del accidente</h4>
+    
+    <select name="id_categoria" id="id_categoria">
+      <optgroup label="Intoxicaciones, quemaduras, torceduras, herida, etc.">  
+      <option value =1>Accidentes en el hogar</option>
+      </optgroup>
+      <optgroup label="Quemaduras, congelamiento, inmersión, electrocución, etc.">  
+      <option value =2>Accidentes en el trabajo</option>
+      </optgroup>
+      <optgroup label="Choques, atropellamientos, volcaduras, bala perdida etc.">  
+      <option value =3>Accidentes en la calle</option>
+      </optgroup>
+      <optgroup label="Caídas, ataque por animales, incendios, etc.">  
+      <option value =4>Accidentes en el campo</option>
+      </optgroup>
+      <optgroup label="Caídas, producidos durante el transporte, intoxicaciones, quemaduras.">  
+      <option value =5>Accidentes en la infancia</option>
+      </optgroup>
+      <optgroup label="Caídas, heridas.">  
+      <option value =6>Accidentes en la escuela</option>
+      </optgroup>
+      <optgroup label="Caídas, intoxicación.">  
+      <option value =7>Accidentes en hospitales</option>
+      </optgroup>
+      <optgroup label="Picaduras, heridas, lesiones, intoxicaciones.">  
+      <option value =8>Accidentes por animales</option>
+      </optgroup>
+      <optgroup label="Derrumbes, deslizamientos, muertes, pérdida de hogares, entre otros.">  
+      <option value =9>Accidentes por desastres</option>       
+    </select> 
+    
+    <br></br>
+    
+    <input type="submit" class="botons" value="Registrar"/>
+    
+
+    </form>  
+    
+    <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+
+    <br></br> 
+ 
+    
+
+  </section>
+
+</body>
+</html>

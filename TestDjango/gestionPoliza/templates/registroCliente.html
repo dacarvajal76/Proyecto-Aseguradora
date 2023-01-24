@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+  table, th, td {
+    border:1px solid black;
+  }  
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Formulario Registro</title>
+</head>
+<body>
+  <section class="form-register">
+    <form action ="" method="post">
+      {% csrf_token %}   
+    <h4>Registro Cliente</h4>
+   
+    <h4>Datos del cliente a registrar</h4>
+
+
+
+    <h4>ID Persona</h4>
+    <input class="controls" type="number" name="id_cliente" id="id_cliente" placeholder="Ingrese nombre el id de la persona" required="" >
+    <h4>Nombre del cliente</h4>
+    <input class="controls" type="text" name="nombre_cliente" id="nombre_cliente" placeholder="Ingrese nombre del cliente" required="" >
+    <h4>Apellido del cliente</h4>
+    <input class="controls" type="text" name="apellido_cliente" id="apellido_cliente" placeholder="Ingrese apellido del cliente" required="" >
+    <h4>Direccion del cliente </h4>
+    <input class="controls" type="text" name="direc_cliente" id="direc_cliente" placeholder="Ingrese la direccion del cliente" required="">
+    <h4>Calle del cliente </h4>
+    <input class="controls" type="text" name="calle" id="calle" placeholder="Ingrese la calle del cliente" required="">
+    <h4>Ciudad del cliente </h4>
+    <input class="controls" type="text" name="ciudad" id="ciudad" placeholder="Ingrese la ciudad del cliente" required="" >
+    <h4>Genero del cliente </h4>
+    <input class="controls" type="gender" name="genero" id="genero" placeholder="Ingrese el genero M o F" required="" >
+    <h4>Fecha de nacimiento </h4>
+    <input class="controls" type="date" name="fecha_nac" id="fecha_nac" placeholder="Ingrese la fecha de nacimiento del cliente" required="">
+    <h4>Profesion </h4>
+    <input class="controls" type="text" name="profesion" id="profesion" placeholder="Ingrese la ciudad del cliente" required="" >
+    <h4>ID Sucursal</h4>
+    <input class="controls" type="number" name="id_sucursal" id="id_sucursal" placeholder="Ingrese el ID de la sucursal" required="" >  
+
+
+    
+      
+    <input type="submit" class="botons" value="Registrar"/>
+
+
+    </form>  
+
+    
+    
+    <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+
+    <br></br>
+
+    <table style="width:100%">
+
+    
+      <tr>
+        <th>ID de persona</th>
+        <th>Cedula</th>
+        <th>Nombre</th>
+        <th>Telefono</th>
+        <th>Tipo Persona</th>
+      </tr>
+      {%for persona in Persona %}
+        <tr> 
+        
+          <td>{{persona.id_persona}}</td>
+          <td>{{persona.ci}}</td>
+          <td>{{persona.nb_persona}}</td>
+          <td>{{persona.num_tlf_persona}}</td>
+          <td>{{persona.tipo_persona.descripcion}}</td>
+         
+        </tr>
+      {% endfor %}      
+    </table>    
+    
+
+
+    <br></br>
+
+    <table style="width:100%">
+
+    
+      <tr>
+        <th>ID de sucursal</th>
+        <th>Nombre</th>
+        <th>Ciudad</th>        
+      </tr>
+      {%for sucursal in Sucursal %}
+        <tr> 
+        
+          <td>{{sucursal.id_sucursal}}</td>
+          <td>{{sucursal.nb_sucursal}}</td>
+          <td>{{sucursal.id_ciudad.nb_ciudad}}</td>
+          
+        </tr>
+      {% endfor %}      
+    </table> 
+
+  </section>
+
+  
+
+</body>
+</html>

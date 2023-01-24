@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styleslider.css' %} ">
+	<meta charset="UTF-8">
+	<title>Registros</title>
+	<link rel="stylesheet" href="{% static 'css/estilos.css' %} ">
+</head>
+<body>
+	<section class="title">
+		<h1>Aseguradora Continental UCAB</h1>
+	</section>
+
+	<nav class="navegacion">
+		<ul class="menu">
+
+			<li class="first-item">
+				<a href="registroVehiculo/">
+					<img src="{% static 'img/Vehiculo.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Registro Vehiculo</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="registroInmueble/">
+					<img src="{% static 'img/home.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Registro Inmueble</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="registroVida/">
+					<img src="{% static 'img/live.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Registro Vida</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="registroPersona/">
+					<img src="{% static 'img/us.jpg' %} " alt="" class="imagen">  <!--Editar tamanio de imagen-->
+					<span class="text-item">Registro Persona</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+            <li>
+				<a href="registroCliente/">
+					<img src="{% static 'img/usuario.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Registro Cliente</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+
+		  	<li>
+				<a href="/../">
+					<img src="{% static 'img/volver.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Volver</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+
+		</ul>
+
+	</nav>
+	<section class="slider-section">
+		
+			<ul>
+				<div class="imagebox">
+					<li>
+					
+						<img src="{% static 'img/Register.jpg' %} " alt="">
+						<span class="imagebox-desc">Registros de bienes asegurables y usuarios</span>
+					</li>
+				</div>
+				
+			</ul>
+		
+
+	</section>
+</body>
+</html>

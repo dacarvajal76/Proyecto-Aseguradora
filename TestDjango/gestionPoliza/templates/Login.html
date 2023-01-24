@@ -1,0 +1,64 @@
+{% load static %}
+<html>
+
+<head>
+
+<title> Aseguradora UCAB </title>
+
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    <!-- Los iconos tipo Solid de Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Nuestro css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'diseñoInicio.css' %} ">
+
+
+</head>
+
+<body>
+
+
+
+</body>
+
+    <div class="modal-dialog text-center">
+        <div class="col-sm-8 main-section">
+            <div class="modal-content">
+                <div class="col-12 user-img">
+                    <img src="{% static 'imagenes/Proyecto.png' %} " alt="">
+                </div>
+
+                <form action ="" method="post">
+                    {% csrf_token %}
+
+                    <h4>Usuario</h4>
+                    <input class="controls" type="text" name="username" id="username" placeholder="Usuario" required="">
+                    <h4>Contrasena</h4>
+                    <input class="controls" type="password" name="password" id="password" placeholder="Contraseña" required="">
+
+                    <br></br>
+                    <input type="submit" value ="Login">
+
+                    {% for message in messages %}
+                        <p id='messages'>{{message}}</p>
+                    {% endfor %}
+
+                </form>
+
+                <div class="col-12 forgot">
+
+                    <a href="#">¿Olvido su contraseña?</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</html>

@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Formulario Registro</title>
+</head>
+<body>
+  <section class="form-register">
+
+    <form action ="" method="post">
+      {% csrf_token %}  
+    <h4>Registro Vehiculo</h4>
+   
+    <h4>Datos del vehiculo a consignar</h4>
+
+
+    <h4>Matricula</h4>
+    <input class="controls" type="text" name="matricula" id="matricula" placeholder="Ingrese la matricula del vehiculo" required="">
+    <h4>Marca del vehiculo</h4>
+    <input class="controls" type="text" name="marca" id="marca" placeholder="Ingrese la marca del vehiculo" required="">
+    <h4>Modelo del vehiculo </h4>
+    <input class="controls" type="text" name="modelo" id="modelo" placeholder="Ingrese el modelo del vehiculo" required="">
+    <h4>Año de vehiculo </h4>
+    <input class="controls" type="number" name="annio" id="annio" placeholder="Ingrese la calle del cliente" required="">
+    <h4>Categoria </h4>
+    <select name="id_categoria" id="id_categoria">
+      <option value =1>Utilitario</option>
+      <option value =2>Gama media</option>
+      <option value =3>Gama alta</option>
+    </select> 
+    <br></br> 
+    <h4>Tipo cobertura </h4>
+    <select name="id_tipo_cobertura" id="id_tipo_cobertura">
+      <option value =1>Todo riesgo</option>
+      <option value =2>Franquicia</option>
+      <option value =3>Terceros</option>
+      <option value =4>Otro</option>
+    </select>  
+
+
+    
+    <input type="submit" class="botons" value="Registrar"/>
+   
+    </form>    
+    
+    <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+    
+  </section>
+
+</body>
+</html>

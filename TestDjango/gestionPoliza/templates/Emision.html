@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styleslider.css' %} ">
+	<meta charset="UTF-8">
+	<title>Emisiones</title>
+	<link rel="stylesheet" href="{% static 'css/estilos.css' %} ">
+</head>
+<body>
+	<section class="title">
+		<h1>Aseguradora Continental UCAB</h1>
+	</section>
+
+	<nav class="navegacion">
+		<ul class="menu">
+
+			<li class="first-item">
+				<a href="registroCVehiculo/">
+					<img src="{% static 'img/Vehiculo.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Contrato Vehicular</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="registroCInmueble/" >
+					<img src="{% static 'img/home.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Contrato Inmobiliario</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="registroCVida/">
+					<img src="{% static 'img/live.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Contrato de Vida</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="registroTitular/">
+					<img src="{% static 'img/usuario.jpg' %} " alt="" class="imagen">  <!--Editar tamanio de imagen-->
+					<span class="text-item">Registro Titular</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+
+
+		  	<li>
+				<a href="/../">
+					<img src="{% static 'img/volver.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Volver</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+
+		</ul>
+
+	</nav>
+	<section class="slider-section">
+		
+			<ul>
+				<div class="imagebox">
+					<li>
+					
+						<img src="{% static 'img/Emisiones.jpg' %} " alt="">
+						<span class="imagebox-desc">Emision de contratos y polizas</span>
+					</li>
+				</div>
+				
+			</ul>
+		
+
+	</section>
+</body>
+</html>

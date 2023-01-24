@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+
+<style>
+  table, th, td {
+    border:1px solid black;
+  }  
+</style>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css2/style.css'%}">
+  <title>Formulario Registro</title>
+</head>
+<body>
+  <section class="form-register">
+    <form action ="" method="post">
+      {% csrf_token %}  
+    <h4>Emision Poliza Vehicular</h4>
+   
+    <h4>Datos de la poliza Vehicular</h4>
+
+    
+    
+    <h4>Matricula</h4>
+    <input class="controls" type="text" name="matricula" id="matricula" placeholder="Prima consignada de la poliza" required="">
+    <h4>Identificador del cliente</h4>
+    <input class="controls" type="number" name="id_cliente" id="id_cliente" placeholder="ID del cliente propietario" required="">
+    <h4>Identificador del agente</h4>
+    <input class="controls" type="number" name="id_agente" id="id_agente" placeholder="ID del agente comercial" required="">
+    <h4>Monto de la comision</h4>
+    <input class="controls" type="number" name="monto_comision_ag" id="monto_comision_ag" placeholder="Prima consignada de la poliza" required="">
+    <h4>Estado de contrato</h4>
+    <select name="id_estado_contrato" id="id_estado_contrato">
+      <option value =1>Activo</option>
+      <option value =2>Vencido</option>
+      <option value =3>Terceros</option>
+      
+    </select> 
+    <br></br> 
+    <h4>Descuento</h4>
+    <input class="controls" type="number" name="descuentos" id="descuentos" placeholder="Descuento aplicado" required="">
+    <h4>Recargo</h4>
+    <input class="controls" type="number" name="recargo" id="recargo" placeholder="Descuento aplicado">
+    <h4>Fecha del contrato</h4>
+    <input class="controls" type="date" name="fecha_contrato" id="fecha_contrato" placeholder="Fecha del contrato ">
+    
+
+    
+    
+    <input type="submit" class="botons" value="Registrar"/>
+
+  </form>
+  
+  <a class="botons" href="/../" type="submit" role="button" >Volver </a>
+
+  <br></br>
+
+    <table style="width:100%">
+
+    
+      <tr>
+        <th>Matricula</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Año</th>
+        
+      </tr>
+      {%for vehiculo in Vehiculo %}
+        <tr> 
+        
+          <td>{{vehiculo.matricula}}  </td>
+          <td>{{vehiculo.marca}}</td>
+          <td>{{vehiculo.modelo}}</td>
+          <td>{{vehiculo.annio}}</td>          
+         
+        </tr>
+      {% endfor %}      
+    </table>    
+    
+
+
+    <br></br>
+
+    <table style="width:100%">
+
+    
+      <tr>
+        <th>ID de cliente</th>
+        <th>Cedula</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Direccion</th>        
+      </tr>
+      {%for cliente in Cliente %}
+        <tr> 
+        
+          <td>{{cliente.id_cliente.id_persona}}</td>
+          <td>{{cliente.id_cliente.ci}}</td>
+          <td>{{cliente.nombre_cliente}}</td>
+          <td>{{cliente.apellido_cliente}}</td>
+          <td>{{cliente.direc_cliente}}</td>
+          
+        </tr>
+      {% endfor %}      
+    </table> 
+
+    <br></br>
+
+    <table style="width:100%">
+
+    
+      <tr>
+        <th>ID de agente</th>
+        <th>Cedula</th>
+        <th>Nombre</th>     
+        <th>Direccion</th>    
+      </tr>
+      {%for agente in Agente %}
+        <tr> 
+        
+          <td>{{agente.id_agente.id_persona}}</td>
+          <td>{{agente.id_agente.ci}}</td>
+          <td>{{agente.id_agente.nb_persona}}</td>
+          <td>{{agente.direc_agente}} </td>
+          
+          
+        </tr>
+      {% endfor %}      
+    </table> 
+    
+    
+  </section>
+
+</body>
+</html>

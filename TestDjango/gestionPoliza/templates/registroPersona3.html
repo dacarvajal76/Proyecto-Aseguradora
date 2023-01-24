@@ -1,0 +1,22 @@
+<h3>Customer For </h3>
+<hr>
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <p><label for="ci">Cedula de Identidad:</label>
+        <input id="ci" type="number" name="ci" required></p>
+
+    <p><label for="nb_persona">Nombre de persona:</label>
+        <textarea name="nb_persona" type="text" id="nb_persona" required></textarea></p>
+
+    <p><label for="num_tlf_persona">Numero de telefono de persona:</label>
+        <input type="number" name="num_tlf_persona" id="num_tlf_persona" required></p>
+
+    <p><label for="tipo_persona">Cc myself:</label>
+        <input type="range" name="tipo_persona" id="tipo_persona"></p>
+
+
+    <input type="submit">
+
+</form>    

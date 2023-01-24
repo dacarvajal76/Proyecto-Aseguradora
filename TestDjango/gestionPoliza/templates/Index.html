@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styleslider.css' %} ">
+	<meta charset="UTF-8">
+	<title>Inicio</title>
+	<link rel="stylesheet" href="{% static 'css/estilos.css' %} ">
+</head>
+<body>
+	<section class="title">
+		<h1>Aseguradora Continental UCAB</h1>
+	</section>
+
+	<nav class="navegacion">
+		<ul class="menu">
+
+			<!--
+				
+
+			-->
+			
+			{% if request.user.is_staff %}
+			<li>
+				<a href="registro/">
+					<img src="{% static 'img/us.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Registros</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="emision/">
+					<img src="{% static 'img/blog.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Emisión</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			{% endif %}  
+
+			{% if request.user.is_authenticated %}
+
+			<li>
+				<a href="consulta/">
+					<img src="{% static 'img/descarga.jpg' %} " alt="" class="imagen">  <!--Editar tamanio de imagen-->
+					<span class="text-item">Consulta</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+
+			<li class="first-item">
+				<a href="siniestro/">
+					<img src="{% static 'img/Lupa.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Siniestro</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="{% url 'Logout' %}">
+					<img src="{% static 'img/contacto.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Log out</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					
+					<span class="text-item">Hola, {{request.user}}</span>
+					
+				</a>
+			</li>
+
+			{% endif %}
+
+			{% if request.user.is_anonymous %}
+		  	<li>
+				<a href="{% url 'Login' %}">
+					<img src="{% static 'img/web.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Login</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+
+			<li>
+				<a href="{% url 'Login' %}">
+					<img src="{% static 'img/web.jpg' %} " alt="" class="imagen">
+					<span class="text-item">Contacto</span>
+					<span class="down-item"></span>
+				</a>
+			</li>
+			{% endif %}
+			
+
+		</ul>
+
+	</nav>
+	<section class="slider-section">
+		<div class="slider-frame">
+			<ul>
+				<div class="imagebox">
+					<li>
+					
+						<img src="{% static 'img/Slider3.jpg' %} " alt="">
+						<span class="imagebox-desc">Bienvenido a UCAB Continental</span>
+					</li>
+				</div>
+				<div class="imagebox">
+					<li>
+					
+						<img src="{% static 'img/Slider2.jpg' %} " alt="">
+						<span class="imagebox-desc">Ofrecemos una amplia cobertura de polizas para ti y los tuyos</span>
+						
+					</li>
+				</div>
+				<div class="imagebox">
+					<li>
+					
+						<img src="{% static 'img/1 (1).jpg' %} " alt="">
+						<span class="imagebox-desc">Nuestro equipo de trabajo esta para garantizar tu seguridad</span>
+					</li>
+				</div>
+				<div class="imagebox">
+					<li>
+					
+						<img src="{% static 'img/Slider4.jpg' %} " alt="">
+						<span class="imagebox-desc">Que esperas para unirtenos y sentirte seguro??</span>
+					</li>
+				</div>
+			</ul>
+		</div>
+
+	</section>
+</body>
+</html>
